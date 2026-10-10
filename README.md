@@ -2,6 +2,7 @@
 
 I used the UCI SECOM dataset (semiconductor manufacturing, 1,567 samples, 590 sensors, 104 failures)
 to find out which sensors are linked to failed products, and whether a model can warn early.
+**Interactive dashboard:** [SECOM Manufacturing Yield Dashboard on Tableau Public](https://public.tableau.com/app/profile/yuning.ren/viz/secom-tableau/SECOMManufacturingYieldDashboard?publish=yes)
 
 ## What I found
 - The fail rate dropped from 12.9% to 4.1% around late August. The reason is not in the data.
@@ -23,6 +24,12 @@ so I can't say what they measure. I don't know what changed in the process in Au
 1. `notebooks/01_load_and_inspect.ipynb`: load the data, drop constant and mostly-missing sensors
 2. `notebooks/02_eda.ipynb`: fail rate over time, sensor screening, time drift
 3. `notebooks/03_modeling.ipynb`: baseline models, time-ordered validation
+
+## Dashboard
+I also built a Tableau dashboard from this analysis: fail rate over time, failures by day,
+and sensor readings you can switch between. It uses 6 sensors from the drift analysis above
+(3 that stayed significant, 3 that only looked linked to failure because of drift).
+Repo: [secom-tableau-dashboard](https://github.com/yuning777/secom-tableau-dashboard)
 
 ## Data
 UCI Machine Learning Repository, SECOM: https://archive.ics.uci.edu/dataset/179/secom (CC BY 4.0)
